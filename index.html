@@ -44,7 +44,7 @@
         line-height: 1.6;
       }
 
-      /* New wrapper to center the main content */
+     
       .main-wrapper {
         max-width: var(--maxw-content);
         margin: 0 auto;
@@ -52,13 +52,12 @@
         padding: 0 0;
       }
 
-      /* Full Width Container for Header/Footer Backgrounds */
+      
       .full-width {
         width: 100%;
         padding: 0;
       }
 
-      /* Header & Navigation */
       header {
         display: flex;
         align-items: center;
@@ -143,9 +142,9 @@
         border-radius: 8px;
       }
 
-      /* Hero Section Styling */
+     
       .hero-section {
-        background-color: var(--light); /* Subtle background for the hero */
+        background-color: var(--light); 
         padding-top: 40px;
       }
       .hero {
@@ -211,7 +210,7 @@
         transform: translateY(-3px);
       }
 
-      /* Cards & Stats */
+      
       .card {
         background: var(--card);
         border-radius: var(--radius);
@@ -248,7 +247,7 @@
         color: var(--muted);
       }
 
-      /* Services Section (NEW FORMAT WITH IMAGES) */
+     
       .services-container {
         margin: 40px 0;
         display: grid;
@@ -283,25 +282,25 @@
         margin-bottom: 15px; /* Added margin to separate text and images */
       }
 
-      /* Image Grid for the Benefit Cards */
+   
       .card-image-grid {
         display: flex;
-        gap: 8px; /* Small space between images */
+        gap: 8px; 
         margin-top: 15px;
         justify-content: flex-start;
-        flex-wrap: wrap; /* Allow images to wrap if necessary on smaller screens */
+        flex-wrap: wrap;
       }
       .card-image-grid img {
-        width: 55px; /* Fixed size for circle images */
+        width: 55px;
         height: 55px;
-        border-radius: 50%; /* Makes them circular */
+        border-radius: 50%;
         object-fit: cover;
-        border: 2px solid var(--light); /* Slight border for separation */
+        border: 2px solid var(--light);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
-      /* End Services Section */
+      
 
-      /* Gallery */
+      
       .gallery {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -322,7 +321,7 @@
         cursor: zoom-in;
       }
 
-      /* About & Contact */
+      
       .two-col {
         display: grid;
         grid-template-columns: 1fr 400px;
@@ -367,7 +366,7 @@
         color: #c3e6c3;
       }
 
-      /* Section Headings */
+     
       h2 {
         font-size: 32px;
         font-weight: 700;
@@ -394,7 +393,7 @@
         margin-bottom: 10px;
       }
 
-      /* Utility */
+     
       .muted {
         color: var(--muted);
       }
@@ -422,7 +421,7 @@
         }
       }
 
-      /* Responsive */
+    
       @media (max-width: 1000px) {
         .hero {
           grid-template-columns: 1fr;
@@ -477,7 +476,7 @@
           flex-direction: column;
         }
       }
-      /* Mobile Menu */
+     
       .mobile-menu {
         position: fixed;
         right: 20px;
@@ -853,7 +852,7 @@
     <script>
       document.getElementById("yr").textContent = new Date().getFullYear();
 
-      // Mobile menu toggle
+ 
       function toggleMobileMenu() {
         const m = document.getElementById("mobileMenu");
         const visible = m.style.display === "flex";
@@ -861,7 +860,6 @@
         m.setAttribute("aria-hidden", visible ? "true" : "false");
       }
 
-      // Simple form submit (placeholder)
       function submitForm(e) {
         e.preventDefault();
         const name = document.getElementById("name").value.trim();

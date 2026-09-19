@@ -90,12 +90,7 @@
         position: relative;
         flex: none;
       }
-      .logo img {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        object-fit: cover;
-      }
+      .logo svg { width: 26px; height: 26px; }
       .logo::after {
         content: "";
         position: absolute;
@@ -202,7 +197,7 @@
       .stat .num { font-family: var(--serif); font-size: 30px; font-weight: 600; color: var(--forest); }
       .stat .label { font-size: 13px; color: var(--muted); margin-top: 2px; }
 
-      /* ---------- Microscope field ---------- */
+      /* ---------- Hero photo (circular lab frame) ---------- */
       .scope { margin: 0; justify-self: center; width: 100%; max-width: 440px; }
       .scope-ring {
         position: relative;
@@ -218,13 +213,8 @@
         background: radial-gradient(circle at 50% 42%, #1f5f3f 0%, #133f2a 46%, var(--deep) 100%);
         box-shadow: 0 0 0 5px var(--forest), inset 0 0 70px rgba(0,0,0,0.55);
       }
-      .scope-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 50%;
-        display: block;
-      }
+      .scope-field img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+      .scope-field::after { content: ""; position: absolute; inset: 0; border-radius: 50%; box-shadow: inset 0 0 40px rgba(0,0,0,0.28); pointer-events: none; }
       figcaption.scope-caption { margin: 16px 4px 0; font-size: 13px; color: var(--muted); text-align: center; }
 
       /* ---------- Section headings ---------- */
@@ -412,8 +402,14 @@
     <header>
       <div class="header-inner">
         <div class="brand">
-          <div class="logo">
-            <img src="SriChewvelBiotechlogo.jpeg" alt="Sri Chewvel Biotech Logo" />
+          <div class="logo" aria-hidden="true">
+            <!-- banana plantlet sprout -->
+            <svg viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 28V15" stroke="#ffffff" stroke-width="2"/>
+              <path d="M16 15C9 15 5 11 5 5c7 0 11 4 11 10z" fill="#4c9a5f" stroke="#ffffff" stroke-width="1.6"/>
+              <path d="M16 18c6 0 10-3 10-9-6 0-10 3-10 9z" fill="#7be0a6" stroke="#ffffff" stroke-width="1.6"/>
+              <path d="M10 28h12" stroke="#c99a3c" stroke-width="2"/>
+            </svg>
           </div>
           <div>
             <div class="brand-name">Sri Chewvel Biotech</div>
@@ -461,10 +457,11 @@
           </div>
         </div>
 
+        <!-- Hero photo: replace c1.jpeg with your own image (same folder as this file) -->
         <figure class="scope hero-fade d2">
           <div class="scope-ring">
             <div class="scope-field">
-              <img src="c1.jpeg" alt="Microscope view" class="scope-img" />
+              <img src="c1.jpeg" alt="Banana tissue culture plantlets at Sri Chewvel Biotech" />
             </div>
           </div>
           <figcaption class="scope-caption">Every plantlet is a genetic clone of a selected high-yield mother plant.</figcaption>

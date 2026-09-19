@@ -90,7 +90,12 @@
         position: relative;
         flex: none;
       }
-      .logo svg { width: 26px; height: 26px; }
+      .logo img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+      }
       .logo::after {
         content: "";
         position: absolute;
@@ -197,7 +202,7 @@
       .stat .num { font-family: var(--serif); font-size: 30px; font-weight: 600; color: var(--forest); }
       .stat .label { font-size: 13px; color: var(--muted); margin-top: 2px; }
 
-      /* ---------- Hero photo (circular lab frame) ---------- */
+      /* ---------- Microscope field — the one signature moment ---------- */
       .scope { margin: 0; justify-self: center; width: 100%; max-width: 440px; }
       .scope-ring {
         position: relative;
@@ -213,8 +218,54 @@
         background: radial-gradient(circle at 50% 42%, #1f5f3f 0%, #133f2a 46%, var(--deep) 100%);
         box-shadow: 0 0 0 5px var(--forest), inset 0 0 70px rgba(0,0,0,0.55);
       }
-      .scope-field img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
-      .scope-field::after { content: ""; position: absolute; inset: 0; border-radius: 50%; box-shadow: inset 0 0 40px rgba(0,0,0,0.28); pointer-events: none; }
+      .scope-field img.scope-img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+      }
+      .scope-field svg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2; }
+      .reticle path, .reticle circle { fill: none; stroke: rgba(190,240,210,0.16); stroke-width: 0.5; }
+
+      .cell {
+        position: absolute;
+        border-radius: 50%;
+        background: radial-gradient(circle at 34% 30%, rgba(255,255,255,0.3), rgba(123,224,166,0.15) 55%, rgba(123,224,166,0.03));
+        border: 1px solid rgba(160,235,190,0.32);
+        animation: drift var(--t, 16s) ease-in-out infinite alternate;
+        z-index: 2;
+      }
+      .cell::after {
+        content: "";
+        position: absolute;
+        width: 32%; height: 32%;
+        left: 36%; top: 38%;
+        border-radius: 50%;
+        background: rgba(31,168,146,0.5);
+      }
+      .cell.c1 { width: 64px; height: 64px; left: 6%;  top: 22%; --dx: 16px;  --dy: -14px; --t: 17s; }
+      .cell.c2 { width: 38px; height: 38px; left: 78%; top: 20%; --dx: -12px; --dy: 18px;  --t: 13s; }
+      .cell.c3 { width: 78px; height: 78px; left: 72%; top: 60%; --dx: -18px; --dy: -12px; --t: 21s; }
+      .cell.c4 { width: 30px; height: 30px; left: 20%; top: 70%; --dx: 14px;  --dy: -16px; --t: 12s; }
+      .cell.c5 { width: 46px; height: 46px; left: 42%; top: 8%;  --dx: -10px; --dy: 14px;  --t: 15s; }
+      .cell.c6 { width: 24px; height: 24px; left: 60%; top: 82%; --dx: 12px;  --dy: -10px; --t: 11s; }
+      @keyframes drift { to { transform: translate(var(--dx, 14px), var(--dy, -18px)); } }
+
+      .scope-label {
+        position: absolute;
+        left: 0; right: 0;
+        text-align: center;
+        font-family: var(--mono);
+        font-size: 11px;
+        color: #c3ead2;
+        letter-spacing: 0.02em;
+        z-index: 3;
+      }
+      .scope-label.top { top: 9%; }
+      .scope-label.bottom { bottom: 8%; display: flex; align-items: center; justify-content: center; gap: 8px; }
+      .scope-label .bar { width: 44px; height: 3px; background: #c3ead2; border-radius: 1px; }
       figcaption.scope-caption { margin: 16px 4px 0; font-size: 13px; color: var(--muted); text-align: center; }
 
       /* ---------- Section headings ---------- */
@@ -391,6 +442,7 @@
         .stat-row { flex-direction: column; gap: 14px; }
       }
       @media (prefers-reduced-motion: reduce) {
+        .cell { animation: none; }
         .hero-fade { animation: none; opacity: 1; transform: none; }
         html { scroll-behavior: auto; }
       }
@@ -402,14 +454,8 @@
     <header>
       <div class="header-inner">
         <div class="brand">
-          <div class="logo" aria-hidden="true">
-            <!-- banana plantlet sprout -->
-            <svg viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M16 28V15" stroke="#ffffff" stroke-width="2"/>
-              <path d="M16 15C9 15 5 11 5 5c7 0 11 4 11 10z" fill="#4c9a5f" stroke="#ffffff" stroke-width="1.6"/>
-              <path d="M16 18c6 0 10-3 10-9-6 0-10 3-10 9z" fill="#7be0a6" stroke="#ffffff" stroke-width="1.6"/>
-              <path d="M10 28h12" stroke="#c99a3c" stroke-width="2"/>
-            </svg>
+          <div class="logo">
+            <img src="SriChewvelBiotechlogo.jpeg" alt="Sri Chewvel Biotech Logo" />
           </div>
           <div>
             <div class="brand-name">Sri Chewvel Biotech</div>
@@ -457,11 +503,26 @@
           </div>
         </div>
 
-        <!-- Hero photo: replace c1.jpeg with your own image (same folder as this file) -->
+        <!-- Microscope field with c1.jpeg image -->
         <figure class="scope hero-fade d2">
           <div class="scope-ring">
             <div class="scope-field">
-              <img src="c1.jpg" alt="Banana tissue culture plantlets at Sri Chewvel Biotech" />
+              <img src="c1.jpg" alt="Microscope view" class="scope-img" />
+              <span class="cell c1"></span>
+              <span class="cell c2"></span>
+              <span class="cell c3"></span>
+              <span class="cell c4"></span>
+              <span class="cell c5"></span>
+              <span class="cell c6"></span>
+
+              <svg class="reticle" viewBox="0 0 100 100" aria-hidden="true">
+                <circle cx="50" cy="50" r="47"/>
+                <circle cx="50" cy="50" r="30"/>
+                <path d="M50 3v10M50 87v10M3 50h10M87 50h10"/>
+              </svg>
+
+              <div class="scope-label top">Musa spp.</div>
+              <div class="scope-label bottom"><span class="bar"></span>50 µm · 40×</div>
             </div>
           </div>
           <figcaption class="scope-caption">Every plantlet is a genetic clone of a selected high-yield mother plant.</figcaption>

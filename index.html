@@ -424,6 +424,25 @@
       /* Cursor cell effects (drawn by JS on desktop only) */
       #cellfx { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 100; }
 
+      /* ---------- WhatsApp floating button ---------- */
+      .whatsapp-float {
+        position: fixed;
+        right: 22px;
+        bottom: 22px;
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background: #25d366;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+        z-index: 90;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .whatsapp-float:hover { transform: scale(1.07); box-shadow: 0 8px 22px rgba(0,0,0,0.3); }
+      .whatsapp-float svg { width: 30px; height: 30px; }
+
       @media (max-width: 980px) {
         .hero { grid-template-columns: 1fr; }
         .services-grid { grid-template-columns: repeat(2, 1fr); }
@@ -450,6 +469,19 @@
   </head>
   <body>
     <canvas id="cellfx" aria-hidden="true"></canvas>
+
+    <a
+      class="whatsapp-float"
+      href="https://wa.me/919600403806?text=Hey%20there!%20Welcome%20to%20Sri%20Chewvel%20Biotech.%20How%20can%20we%20help%20you%3F"
+      target="_blank"
+      rel="noopener"
+      aria-label="Chat with us on WhatsApp"
+    >
+      <svg viewBox="0 0 32 32" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16.004 3C9.376 3 4 8.373 4 15c0 2.24.617 4.336 1.688 6.135L4 29l8.06-1.652A11.94 11.94 0 0 0 16.004 27C22.63 27 28 21.627 28 15S22.63 3 16.004 3zm0 21.75c-1.98 0-3.83-.55-5.41-1.5l-.388-.23-4.78.98.99-4.66-.253-.4A9.7 9.7 0 0 1 6.25 15c0-5.38 4.375-9.75 9.754-9.75S25.75 9.62 25.75 15 21.383 24.75 16.004 24.75z"/>
+        <path d="M21.6 17.86c-.297-.148-1.758-.867-2.03-.965-.273-.098-.47-.148-.668.148-.198.297-.767.965-.94 1.164-.173.198-.347.223-.644.075-.297-.149-1.253-.462-2.387-1.472-.882-.787-1.478-1.76-1.65-2.058-.173-.297-.019-.458.13-.606.134-.133.297-.347.446-.52.148-.174.198-.298.297-.496.1-.198.05-.372-.025-.52-.075-.149-.668-1.611-.916-2.207-.242-.581-.487-.502-.668-.512l-.57-.01c-.198 0-.52.075-.792.372-.272.297-1.04 1.016-1.04 2.478 0 1.462 1.065 2.874 1.213 3.072.148.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.626.712.227 1.36.195 1.873.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.288.173-1.412-.074-.124-.272-.198-.57-.347z"/>
+      </svg>
+    </a>
 
     <header>
       <div class="header-inner">
@@ -677,8 +709,9 @@
               No 1/5-13, Munnamoorthy Garden, Gokul Nagar, N.B. Agrahram, Hosur - 635 109<br /><br />
               <strong>Branch Office (Mathithoppu)</strong><br />
               [Insert Mathithoppu address]<br /><br />
+              Website: <a href="https://srichewvelbiotech.com" target="_blank" rel="noopener">srichewvelbiotech.com</a><br />
               Mobile: 96004 03806 (Mr. P. Deivasigamani)<br />
-              Email: <a href="mailto:deivasigamani882@gmail.com">deivasigamani882@gmail.com</a>
+              Email: <a href="mailto:admin@srichewvelbiotech.com">admin@srichewvelbiotech.com</a>
             </div>
           </aside>
         </div>

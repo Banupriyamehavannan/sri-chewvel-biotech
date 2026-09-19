@@ -90,7 +90,12 @@
         position: relative;
         flex: none;
       }
-      .logo svg { width: 26px; height: 26px; }
+      .logo img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+      }
       .logo::after {
         content: "";
         position: absolute;
@@ -439,14 +444,8 @@
     <header>
       <div class="header-inner">
         <div class="brand">
-          <div class="logo" aria-hidden="true">
-            <!-- banana plantlet sprout -->
-            <svg viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M16 28V15" stroke="#ffffff" stroke-width="2"/>
-              <path d="M16 15C9 15 5 11 5 5c7 0 11 4 11 10z" fill="#4c9a5f" stroke="#ffffff" stroke-width="1.6"/>
-              <path d="M16 18c6 0 10-3 10-9-6 0-10 3-10 9z" fill="#7be0a6" stroke="#ffffff" stroke-width="1.6"/>
-              <path d="M10 28h12" stroke="#c99a3c" stroke-width="2"/>
-            </svg>
+          <div class="logo">
+            <img src="SriChewvelBiotech.jpeg" alt="Sri Chewvel Biotech Logo" />
           </div>
           <div>
             <div class="brand-name">Sri Chewvel Biotech</div>

@@ -202,7 +202,7 @@
       .stat .num { font-family: var(--serif); font-size: 30px; font-weight: 600; color: var(--forest); }
       .stat .label { font-size: 13px; color: var(--muted); margin-top: 2px; }
 
-      /* ---------- Microscope field — the one signature moment ---------- */
+      /* ---------- Microscope field ---------- */
       .scope { margin: 0; justify-self: center; width: 100%; max-width: 440px; }
       .scope-ring {
         position: relative;
@@ -218,44 +218,13 @@
         background: radial-gradient(circle at 50% 42%, #1f5f3f 0%, #133f2a 46%, var(--deep) 100%);
         box-shadow: 0 0 0 5px var(--forest), inset 0 0 70px rgba(0,0,0,0.55);
       }
-      .scope-field svg { position: absolute; inset: 0; width: 100%; height: 100%; }
-      .reticle path, .reticle circle { fill: none; stroke: rgba(190,240,210,0.16); stroke-width: 0.5; }
-
-      .cell {
-        position: absolute;
+      .scope-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
         border-radius: 50%;
-        background: radial-gradient(circle at 34% 30%, rgba(255,255,255,0.3), rgba(123,224,166,0.15) 55%, rgba(123,224,166,0.03));
-        border: 1px solid rgba(160,235,190,0.32);
-        animation: drift var(--t, 16s) ease-in-out infinite alternate;
+        display: block;
       }
-      .cell::after {
-        content: "";
-        position: absolute;
-        width: 32%; height: 32%;
-        left: 36%; top: 38%;
-        border-radius: 50%;
-        background: rgba(31,168,146,0.5);
-      }
-      .cell.c1 { width: 64px; height: 64px; left: 6%;  top: 22%; --dx: 16px;  --dy: -14px; --t: 17s; }
-      .cell.c2 { width: 38px; height: 38px; left: 78%; top: 20%; --dx: -12px; --dy: 18px;  --t: 13s; }
-      .cell.c3 { width: 78px; height: 78px; left: 72%; top: 60%; --dx: -18px; --dy: -12px; --t: 21s; }
-      .cell.c4 { width: 30px; height: 30px; left: 20%; top: 70%; --dx: 14px;  --dy: -16px; --t: 12s; }
-      .cell.c5 { width: 46px; height: 46px; left: 42%; top: 8%;  --dx: -10px; --dy: 14px;  --t: 15s; }
-      .cell.c6 { width: 24px; height: 24px; left: 60%; top: 82%; --dx: 12px;  --dy: -10px; --t: 11s; }
-      @keyframes drift { to { transform: translate(var(--dx, 14px), var(--dy, -18px)); } }
-
-      .scope-label {
-        position: absolute;
-        left: 0; right: 0;
-        text-align: center;
-        font-family: var(--mono);
-        font-size: 11px;
-        color: #c3ead2;
-        letter-spacing: 0.02em;
-      }
-      .scope-label.top { top: 9%; }
-      .scope-label.bottom { bottom: 8%; display: flex; align-items: center; justify-content: center; gap: 8px; }
-      .scope-label .bar { width: 44px; height: 3px; background: #c3ead2; border-radius: 1px; }
       figcaption.scope-caption { margin: 16px 4px 0; font-size: 13px; color: var(--muted); text-align: center; }
 
       /* ---------- Section headings ---------- */
@@ -432,7 +401,6 @@
         .stat-row { flex-direction: column; gap: 14px; }
       }
       @media (prefers-reduced-motion: reduce) {
-        .cell { animation: none; }
         .hero-fade { animation: none; opacity: 1; transform: none; }
         html { scroll-behavior: auto; }
       }
@@ -493,27 +461,10 @@
           </div>
         </div>
 
-        <!-- Microscope field: rotating DNA double helix among drifting plant cells -->
         <figure class="scope hero-fade d2">
           <div class="scope-ring">
             <div class="scope-field">
-              <span class="cell c1"></span>
-              <span class="cell c2"></span>
-              <span class="cell c3"></span>
-              <span class="cell c4"></span>
-              <span class="cell c5"></span>
-              <span class="cell c6"></span>
-
-              <svg class="reticle" viewBox="0 0 100 100" aria-hidden="true">
-                <circle cx="50" cy="50" r="47"/>
-                <circle cx="50" cy="50" r="30"/>
-                <path d="M50 3v10M50 87v10M3 50h10M87 50h10"/>
-              </svg>
-
-              <svg id="helix" viewBox="0 0 300 300" role="img" aria-label="Rotating DNA double helix"></svg>
-
-              <div class="scope-label top">Musa spp.</div>
-              <div class="scope-label bottom"><span class="bar"></span>50 µm · 40×</div>
+              <img src="c1.jpeg" alt="Microscope view" class="scope-img" />
             </div>
           </div>
           <figcaption class="scope-caption">Every plantlet is a genetic clone of a selected high-yield mother plant.</figcaption>
@@ -710,75 +661,6 @@
           setTimeout(() => { btn.disabled = false; btn.textContent = originalText; }, 2000);
         }, 900);
       }
-
-      /* ------------------------------------------------------------
-         DNA double helix (hero microscope field)
-         ------------------------------------------------------------ */
-      (function helix() {
-        const svg = document.getElementById("helix");
-        if (!svg) return;
-        const NS = "http://www.w3.org/2000/svg";
-        const make = (tag, attrs) => {
-          const el = document.createElementNS(NS, tag);
-          for (const k in attrs) el.setAttribute(k, attrs[k]);
-          return el;
-        };
-
-        const CX = 150, TOP = 30, BOT = 270, AMP = 56, RUNGS = 16, TURNS = 1.6, STEPS = 70;
-
-        const rungLayer = make("g", {});
-        const strandA = make("path", { fill: "none", stroke: "#7be0a6", "stroke-width": 3.2, "stroke-linecap": "round" });
-        const strandB = make("path", { fill: "none", stroke: "#1fa892", "stroke-width": 3.2, "stroke-linecap": "round" });
-        const nodeLayer = make("g", {});
-        svg.append(rungLayer, strandA, strandB, nodeLayer);
-
-        const rungs = [];
-        for (let i = 0; i < RUNGS; i++) {
-          const line = make("line", { stroke: "rgba(201,154,60,0.75)", "stroke-width": 1.6, "stroke-linecap": "round" });
-          const a = make("circle", { fill: "#7be0a6" });
-          const b = make("circle", { fill: "#1fa892" });
-          rungLayer.append(line);
-          nodeLayer.append(a, b);
-          rungs.push({ line, a, b });
-        }
-
-        function draw(phase) {
-          let dA = "", dB = "";
-          for (let s = 0; s <= STEPS; s++) {
-            const u = s / STEPS;
-            const y = TOP + (BOT - TOP) * u;
-            const th = u * TURNS * 2 * Math.PI + phase;
-            const x1 = CX + AMP * Math.sin(th);
-            const x2 = CX - AMP * Math.sin(th);
-            dA += (s ? "L" : "M") + x1.toFixed(1) + " " + y.toFixed(1);
-            dB += (s ? "L" : "M") + x2.toFixed(1) + " " + y.toFixed(1);
-          }
-          strandA.setAttribute("d", dA);
-          strandB.setAttribute("d", dB);
-
-          rungs.forEach((r, i) => {
-            const u = (i + 0.5) / RUNGS;
-            const y = TOP + (BOT - TOP) * u;
-            const th = u * TURNS * 2 * Math.PI + phase;
-            const x1 = CX + AMP * Math.sin(th);
-            const x2 = CX - AMP * Math.sin(th);
-            const z = Math.cos(th);            // +1 = facing viewer
-            r.line.setAttribute("x1", x1); r.line.setAttribute("x2", x2);
-            r.line.setAttribute("y1", y);  r.line.setAttribute("y2", y);
-            r.line.setAttribute("opacity", (0.35 + 0.3 * Math.abs(z)).toFixed(2));
-            r.a.setAttribute("cx", x1); r.a.setAttribute("cy", y);
-            r.b.setAttribute("cx", x2); r.b.setAttribute("cy", y);
-            r.a.setAttribute("r", (4.6 + 2 * z).toFixed(2));
-            r.b.setAttribute("r", (4.6 - 2 * z).toFixed(2));
-            r.a.setAttribute("opacity", (0.72 + 0.28 * z).toFixed(2));
-            r.b.setAttribute("opacity", (0.72 - 0.28 * z).toFixed(2));
-          });
-        }
-
-        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { draw(0.6); return; }
-        function frame(t) { draw(t * 0.0008); requestAnimationFrame(frame); }
-        requestAnimationFrame(frame);
-      })();
 
       /* ------------------------------------------------------------
          Cursor cell effects (desktop / mouse only)

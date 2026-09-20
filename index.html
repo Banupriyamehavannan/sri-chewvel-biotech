@@ -394,6 +394,11 @@
       .contact-details a { color: var(--forest-light); }
       .contact-details strong { font-family: var(--sans); color: var(--ink); }
 
+      .table-container { overflow-x: auto; margin: 20px 0; }
+      table { width: 100%; border-collapse: collapse; font-size: 14px; background: var(--card); border: 1px solid var(--line); }
+      th, td { padding: 10px 12px; border: 1px solid var(--line); text-align: left; }
+      th { background: rgba(76,154,95,0.12); color: var(--forest); font-family: var(--serif); }
+
       footer {
         margin-top: 20px;
         padding: 26px 0;
@@ -410,7 +415,6 @@
 
       #cellfx { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 100; }
 
-      /* ---------- WhatsApp floating button ---------- */
       .whatsapp-float {
         position: fixed;
         right: 22px;
@@ -466,11 +470,12 @@
           </div>
           <div>
             <div class="brand-name">Sri Chewvel Biotech</div>
-            <div class="brand-tag">Tissue culture lab</div>
+            <div class="brand-tag">Tissue Culture Lab · Hosur &amp; Mandithoppu</div>
           </div>
         </div>
         <nav aria-label="Main navigation">
           <a href="#about">About</a>
+          <a href="#guide">Cultivation Guide</a>
           <a href="#services">Services</a>
           <a href="#gallery">Gallery</a>
           <a href="#careers">Careers</a>
@@ -483,6 +488,7 @@
         </button>
         <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
           <a href="#about" onclick="toggleMobileMenu()">About</a>
+          <a href="#guide" onclick="toggleMobileMenu()">Cultivation Guide</a>
           <a href="#services" onclick="toggleMobileMenu()">Services</a>
           <a href="#gallery" onclick="toggleMobileMenu()">Gallery</a>
           <a href="#careers" onclick="toggleMobileMenu()">Careers</a>
@@ -494,21 +500,19 @@
     <main class="wrap">
       <section class="hero">
         <div>
-          <span class="eyebrow hero-fade">Tissue culture laboratory · Hosur, Tamil Nadu</span>
-          <h1 class="hero-fade d1">Disease-free banana plantlets, grown for consistent yield</h1>
+          <span class="eyebrow hero-fade">Tissue Culture Laboratory · Head Office: Hosur | Branch: Mandithoppu, Tamil Nadu</span>
+          <h1 class="hero-fade d1">Sri Chewvel Biotech — High-Yield Disease-Free Tissue Culture Banana Plants</h1>
           <p class="lead hero-fade d1">
-            We micropropagate Grand Nain, Eallaki and other commercial banana varieties under
-            sterile lab conditions, then harden every plantlet in our polyhouse before it
-            reaches your field. Current capacity: 4 million plantlets a year.
+            Headquartered in Hosur and operating with a major production branch near Mandithoppu (Kovilpatti, Tuticorin Dist, Tamil Nadu), Sri Chewvel Biotech produces over 30 Lakhs (3 Million) premium quality, disease-free, high-yielding tissue culture banana plantlets annually and supplies them to farmers across India.
           </p>
           <div class="cta hero-fade d2">
             <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Request a quote</button>
-            <a href="#services" class="btn btn-outline">See our process</a>
+            <a href="#guide" class="btn btn-outline">Cultivation Guide</a>
           </div>
           <div class="stat-row hero-fade d2">
-            <div class="stat"><div class="num">4M</div><div class="label">Plantlets produced per year</div></div>
-            <div class="stat"><div class="num">10+</div><div class="label">Years in tissue culture production</div></div>
-            <div class="stat"><div class="num">2</div><div class="label">Production units — Hosur &amp; Mathithoppu</div></div>
+            <div class="stat"><div class="num">30L+</div><div class="label">Tissue banana plants / year</div></div>
+            <div class="stat"><div class="num">20+</div><div class="label">Years of expert experience</div></div>
+            <div class="stat"><div class="num">100%</div><div class="label">Greenhouse hardened plants</div></div>
           </div>
         </div>
 
@@ -535,6 +539,190 @@
           </div>
           <figcaption class="scope-caption">Every plantlet is a genetic clone of a selected high-yield mother plant.</figcaption>
         </figure>
+      </section>
+
+      <div class="dish-divider" aria-hidden="true">
+        <div class="line"></div>
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#16412b" stroke-width="1.4"/><circle cx="12" cy="12" r="6.5" stroke="#1fa892" stroke-width="1.2" stroke-dasharray="2 2"/><circle cx="12" cy="12" r="2" fill="#c99a3c"/></svg>
+        <div class="line"></div>
+      </div>
+
+      <section id="features">
+        <h2>Special Features of Sri Chewvel Biotech</h2>
+        <p class="section-intro">
+          We are dedicated to prioritizing high quality and farmer satisfaction above all else across all our operating locations.
+        </p>
+        <div class="about">
+          <ul>
+            <li><strong>Dual Operations:</strong> Head Office in Hosur (Krishnagiri Dist.) &amp; Branch Production Unit near Mandithoppu, Kovilpatti (Tuticorin Dist.), Tamil Nadu.</li>
+            <li>Produces over 30 Lakhs (3 Million) disease-free, high-yielding tissue culture banana plantlets per year and supplies them across India.</li>
+            <li>Pioneering provider in Southern Tamil Nadu delivering high-quality plants nurtured completely in high-tech greenhouse conditions.</li>
+            <li>Managed by highly qualified graduate experts with over 20 years of technical experience in plant biotechnology.</li>
+            <li>Highest priority given to customer service and technical guidance for farmers.</li>
+            <li>Uncompromising focus on quality, earning a trusted place in the hearts of agricultural communities.</li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="dish-divider" aria-hidden="true">
+        <div class="line"></div>
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#16412b" stroke-width="1.4"/><circle cx="12" cy="12" r="6.5" stroke="#1fa892" stroke-width="1.2" stroke-dasharray="2 2"/><circle cx="12" cy="12" r="2" fill="#c99a3c"/></svg>
+        <div class="line"></div>
+      </div>
+
+      <section id="guide">
+        <h2>Tissue Culture Banana Cultivation Guide</h2>
+        <p class="section-intro">
+          To achieve superior quality and maximum yield, planting disease-free tissue culture banana plantlets from Sri Chewvel Biotech is the ideal choice.
+        </p>
+
+        <h3>Advantages of Tissue Culture Banana Plants:</h3>
+        <div class="about">
+          <ul>
+            <li>Completely disease-free at the time of supply.</li>
+            <li>Uniform growth across fields leading to synchronized, high yield.</li>
+            <li>Vigorous root system enabling healthy growth.</li>
+            <li>Plantlets are available for planting throughout the entire year.</li>
+          </ul>
+        </div>
+
+        <h3 style="margin-top: 30px;">Available Varieties:</h3>
+        <div class="about">
+          <ul>
+            <li>Grand Nain (G9)</li>
+            <li>Rasakadali (Yelakki)</li>
+            <li>Red Banana (Sevvaazhai)</li>
+            <li>Karpooravalli</li>
+            <li>Country Banana (Monthan)</li>
+            <li>Nendran (Regular)</li>
+          </ul>
+        </div>
+
+        <h3 style="margin-top: 30px;">Soil Requirement &amp; Preparation:</h3>
+        <p class="about">
+          <strong>Soil:</strong> Well-drained red soil and alluvial loamy soil with a pH ranging between 6.5 and 7.5 are best suitable. Avoid planting in alkaline, saline, or waterlogged soils.<br />
+          <strong>Land Preparation:</strong> Deep ploughing 2 to 3 times to make soil fine and clump-free. Dig pits of size 1.5 ft Length x 1.5 ft Width x 1.5 ft Depth.
+        </p>
+
+        <h3 style="margin-top: 30px;">Spacing &amp; Plant Density:</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Variety</th>
+                <th>Spacing</th>
+                <th>Plants / Acre</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Grand Nain</td>
+                <td>6 ft x 6 ft</td>
+                <td>1200 plants</td>
+              </tr>
+              <tr>
+                <td>Ney Poovan (Yelakki) &amp; Regular Nendran</td>
+                <td>7 ft x 6 ft / 6 ft x 7 ft</td>
+                <td>1037 / 1050 plants</td>
+              </tr>
+              <tr>
+                <td>Quintal Nendran</td>
+                <td>6 ft x 7 ft</td>
+                <td>890 plants</td>
+              </tr>
+              <tr>
+                <td>Red Banana (Sevvaazhai)</td>
+                <td>8 ft x 7 ft</td>
+                <td>780 plants</td>
+              </tr>
+              <tr>
+                <td>Karpooravalli</td>
+                <td>8 ft x 7 ft</td>
+                <td>780 plants</td>
+              </tr>
+              <tr>
+                <td>Monthan</td>
+                <td>8 ft x 7 ft</td>
+                <td>780 plants</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="margin-top: 30px;">Basal Fertilizer (Per Tree):</h3>
+        <div class="about">
+          <ul>
+            <li>Well-decomposed Farm Yard Manure (FYM): 10 kg</li>
+            <li>Neem Cake: 250 g</li>
+            <li>Single Super Phosphate (SSP): 25 g</li>
+          </ul>
+        </div>
+
+        <h3 style="margin-top: 30px;">Fertilizer Schedule for Grand Nain (G9) [Grams per tree]:</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Time of Application (Days after planting)</th>
+                <th>D.A.P</th>
+                <th>Urea</th>
+                <th>Muriate of Potash (MOP)</th>
+                <th>Magnesium Sulphate</th>
+                <th>Zinc Sulphate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>30th Day</td><td>50</td><td>25</td><td>25</td><td>---</td><td>---</td></tr>
+              <tr><td>60th Day</td><td>60</td><td>50</td><td>50</td><td>---</td><td>---</td></tr>
+              <tr><td>90th Day</td><td>60</td><td>50</td><td>75</td><td>---</td><td>---</td></tr>
+              <tr><td>105th Day</td><td>---</td><td>---</td><td>---</td><td>20</td><td>5</td></tr>
+              <tr><td>120th Day</td><td>---</td><td>50</td><td>100</td><td>---</td><td>---</td></tr>
+              <tr><td>135th Day</td><td>---</td><td>---</td><td>---</td><td>20</td><td>5</td></tr>
+              <tr><td>150th Day</td><td>---</td><td>50</td><td>100</td><td>---</td><td>---</td></tr>
+              <tr><td>165th Day</td><td>---</td><td>---</td><td>---</td><td>20</td><td>5</td></tr>
+              <tr><td>180th Day</td><td>---</td><td>50</td><td>150</td><td>---</td><td>---</td></tr>
+              <tr><td>210th Day</td><td>---</td><td>50</td><td>150</td><td>---</td><td>---</td></tr>
+              <tr><td>240th Day</td><td>---</td><td>25</td><td>150</td><td>---</td><td>---</td></tr>
+              <tr><td>270th Day</td><td>---</td><td>---</td><td>100</td><td>---</td><td>---</td></tr>
+              <tr><td><strong>Total</strong></td><td><strong>170</strong></td><td><strong>350</strong></td><td><strong>900</strong></td><td><strong>60</strong></td><td><strong>15</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="margin-top: 30px;">Intercultural Practices:</h3>
+        <div class="about">
+          <ul>
+            <li>Remove weeds periodically.</li>
+            <li>Prune side suckers, dry leaves, and trash regularly to keep the farm clean.</li>
+            <li>During hot summer and cold winter seasons, cover banana bunches using bunch sleeves or dry banana leaves for protection.</li>
+          </ul>
+        </div>
+
+        <h3 style="margin-top: 30px;">Crop Protection (Pests &amp; Diseases):</h3>
+        <div class="about">
+          <strong style="color: var(--forest);">Pests:</strong>
+          <ul>
+            <li><strong>Corm Weevil:</strong> Holes in corm and roots causing severe damage. <em>Control:</em> Mix 2.5 ml Chlorpyrifos 20 EC per liter of water and drench around the base of the plant.</li>
+            <li><strong>Nematodes:</strong> Red/black streak lesions on roots and root galls. <em>Control:</em> Apply 10g Carbofuran 3G per plant during planting, followed by 20g at the 3rd and 6th months.</li>
+            <li><strong>Thrips:</strong> Rough, dull, and rust-like patches on fruits and skin. <em>Control:</em> Spray Monocrotophos at 2.5 ml/L or Imidacloprid at 0.5 ml/L of water.</li>
+            <li><strong>Stem Borer:</strong> Gum-like sap oozing from bored stem holes. <em>Control:</em> Inject 2.5 ml of Monocrotophos solution (150 ml pesticide in 350 ml water) into the stem using a stem injector.</li>
+          </ul>
+
+          <strong style="color: var(--forest); margin-top: 10px; display: block;">Diseases:</strong>
+          <ul>
+            <li><strong>Bacterial Corm Rot (Erwinia):</strong> Rotting corm with scorched leaves. Heart leaf dries up and pulls out easily. <em>Control:</em> Apply Trichoderma / Pseudomonas in soil. Planting in the evening during sunny seasons is recommended.</li>
+            <li><strong>Sigatoka Leaf Spot:</strong> Oval/eye-shaped brown spots on leaves causing premature fruit ripening. <em>Control:</em> Spray Nativo (0.5 g/L), Roko (1.5 g/L), or Tilt (1 ml/L) + Roko (1 g/L) at first sight of spots.</li>
+            <li><strong>Bunchy Top Virus:</strong> Stunted spear-like leaves bunched at the crown. Spread by aphids. <em>Control:</em> Plant tested, virus-free Sri Chewvel Biotech plantlets. Spray Imidacloprid (0.5 ml/L) to control aphids.</li>
+            <li><strong>Mosaic Virus:</strong> Pale green or yellow streaks and patches on leaves. <em>Control:</em> Uproot and destroy infected plants. Avoid intercropping with tomato, pumpkin, or cucumber.</li>
+          </ul>
+        </div>
+
+        <h3 style="margin-top: 30px;">Harvesting:</h3>
+        <p class="about">Harvest can be done 100 to 110 days after the emergence of the banana bunch.</p>
+
+        <p style="font-size: 13px; color: var(--muted); font-style: italic; margin-top: 15px;">
+          * Note: The above cultivation practices are meticulously formulated based on our research field trial results. However, actual requirements may vary based on location, variety, and planting season.
+        </p>
       </section>
 
       <div class="dish-divider" aria-hidden="true">
@@ -576,7 +764,7 @@
               <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M26 13a10 10 0 0 0-18-3"/><path d="M8 5v5h5"/><path d="M6 19a10 10 0 0 0 18 3"/><path d="M24 27v-5h-5"/><circle cx="16" cy="16" r="2.4" fill="currentColor" stroke="none"/></svg>
             </div>
             <h3>Supply on your schedule</h3>
-            <p>Two production units let us fulfil large commercial orders year-round, without the seasonal gaps that limit sucker-based nurseries.</p>
+            <p>Our dual facilities in Hosur and Mandithoppu let us fulfil large commercial orders year-round, without the seasonal gaps that limit sucker-based nurseries.</p>
           </div>
         </div>
 
@@ -726,31 +914,26 @@
           <div class="about">
             <h2>About Sri Chewvel Biotech</h2>
             <p>
-              Sri Chewvel Biotech is a plant tissue culture company founded by
-              Mr. P. Deivasigamani, who has spent over ten years in high-volume
-              plant production and supply.
+              Sri Chewvel Biotech is a premier plant tissue culture production organization with its Head Office based in Hosur (Krishnagiri District) and a key regional branch unit located near Mandithoppu, Kovilpatti (Tuticorin District), Tamil Nadu.
             </p>
             <p>
-              Our head office and main laboratory are in Hosur, Krishnagiri
-              District, Tamil Nadu, with a branch office and second production
-              unit in Mathithoppu — giving us the reach to serve large orders
-              across the region.
+              We manufacture and supply over 30 Lakhs (3 Million) high-yielding, disease-free tissue culture banana plantlets every year to farmers across all states in India.
             </p>
             <p>
-              We follow strict aseptic protocols and grow every plantlet in a
-              nutrient-rich medium under controlled lab conditions, so
-              multiplication stays fast, disease-free and genetically uniform.
+              With over 20 years of technical expertise, our team comprises qualified graduate specialists committed to advancing agricultural productivity and upholding rigorous quality benchmarks.
             </p>
-            <h3>What we hold ourselves to</h3>
+            <h3>Key Highlights</h3>
             <ul>
-              <li>Documented quality checks at every stage of the lab and hardening process.</li>
-              <li>A team led by microbiologists and plant tissue culture scientists.</li>
-              <li>4 million plants a year today, with expansion underway across both units.</li>
+              <li><strong>Head Office:</strong> Hosur, Krishnagiri District, Tamil Nadu.</li>
+              <li><strong>Production Branch:</strong> Mandithoppu, Kovilpatti, Tuticorin District, Tamil Nadu.</li>
+              <li>The only facility in southern region delivering plants grown completely inside high-tech polyhouses/greenhouses.</li>
+              <li>Pan-India delivery network supplying certified disease-free banana plantlets.</li>
+              <li>Guaranteed uniform growth, robust root development, and round-the-year availability.</li>
             </ul>
           </div>
 
           <aside class="contact-card" id="contact">
-            <h3>Request a quote</h3>
+            <h3>Request a Quote / Contact Us</h3>
             <p>Send your variety, quantity and timeline — we'll reply with pricing and lead time.</p>
             <form onsubmit="submitForm(event)">
               <input type="text" id="name" placeholder="Your name" required />
@@ -761,9 +944,15 @@
             </form>
             <div class="contact-details">
               <strong>Head Office (Hosur)</strong><br />
-              No 1/5-13, Munnamoorthy Garden, Gokul Nagar, N.B. Agrahram, Hosur - 635 109<br /><br />
-              <strong>Branch Office (Mathithoppu)</strong><br />
-              [Insert Mathithoppu address]<br /><br />
+              Sy 40 3/A1A1A1, Mummoorthy Garden,<br />
+              Main 1st Cross, Gokul Nagar Road,<br />
+              Naligabetta Agrahram, Hosur - 635109,<br />
+              Krishnagiri Dist, Tamil Nadu.<br /><br />
+
+              <strong>Branch / Production Unit (Mandithoppu)</strong><br />
+              No. 417/6 NH, 7th Street, Surya Nagar,<br />
+              Near Church, Mandithoppu, Kovilpatti - 628501.<br /><br />
+
               Mobile: <a href="tel:+919600403806">96004 03806</a> (Mr. P. Deivasigamani)<br />
               Email: <a href="mailto:admin@srichewvelbiotech.com">admin@srichewvelbiotech.com</a><br />
               Website: <a href="https://srichewvelbiotech.com" target="_blank" rel="noopener">srichewvelbiotech.com</a>
@@ -788,7 +977,7 @@
     <footer>
       <div class="wrap">
         <div>© <span id="yr"></span> Sri Chewvel Biotech — All rights reserved.</div>
-        <div style="margin-top: 4px; opacity: 0.85;">Head Office: Hosur · Branch Office: Mathithoppu · Krishnagiri Dist., Tamil Nadu, India</div>
+        <div style="margin-top: 4px; opacity: 0.85;">Head Office: Hosur · Production Unit: Mandithoppu, Kovilpatti · Tamil Nadu, India</div>
       </div>
     </footer>
 
